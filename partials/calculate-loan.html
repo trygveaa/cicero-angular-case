@@ -1,0 +1,52 @@
+<div data-ng-controller="CalculateLoanController">
+    <h1>Calculate your loan</h1>
+
+    <form name="calculateLoan">
+        <div>
+            <h4>Loan amount</h4>
+            <p><input type="number"
+                      name="amount"
+                      min="10000"
+                      max="100000000"
+                      step="10000"
+                      required
+                      autofocus
+                      data-ng-model="loan.amount"
+                      data-ng-change="calculate()"> NOK</p>
+            <p class="error">Please type a number between 10000 and 100000000.</p>
+        </div>
+        <div>
+            <h4>Down payment years</h4>
+            <p><input type="number"
+                      name="years"
+                      min="0.05"
+                      max="20"
+                      required
+                      data-ng-model="loan.years"
+                      data-ng-change="calculate()"> years</p>
+            <p class="error">Please type a decimal between 0.05 and 20.</p>
+        </div>
+        <div>
+            <h4>Interest rate</h4>
+            <p><input type="number"
+                      name="interest"
+                      min="0"
+                      max="20"
+                      step="0.1"
+                      required
+                      data-ng-model="loan.interest"
+                      data-ng-change="calculate()"> %</p>
+            <p class="error">Please type a decimal between 0 and 20.</p>
+        </div>
+    </form>
+
+    <div data-ng-show="result.payment">
+        <h3>Monthly payment</h3>
+        <p class="result"><span data-ng-bind="result.payment"></span> NOK</p>
+    </div>
+
+    <div data-ng-show="result.error">
+        <h3>Error</h3>
+        <p>Could not fetch result. The server responded with: <span data-ng-bind="result.error"></span></p>
+    </div>
+</div>

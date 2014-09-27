@@ -1,0 +1,35 @@
+@media (min-width: 900px) {
+    body {
+        width: 900px;
+        margin: auto;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+
+    form {
+        margin: auto;
+        width: 900px;
+    }
+
+    form div {
+        width: 260px;
+        float: left;
+        margin: 20px;
+    }
+}
+
+input {
+    width: 150px;
+}
+
+.result {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.ng-pristine p.error, .ng-valid p.error {
+    display: none;
+}
