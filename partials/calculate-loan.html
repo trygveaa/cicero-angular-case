@@ -2,7 +2,7 @@
     <h1>Calculate your loan</h1>
 
     <form name="calculateLoan">
-        <div>
+        <div input-validate>
             <h4>Loan amount</h4>
             <p><input type="number"
                       name="amount"
@@ -15,7 +15,7 @@
                       data-ng-change="calculate()"> NOK</p>
             <p class="error">Please type a number between 10000 and 100000000.</p>
         </div>
-        <div>
+        <div input-validate>
             <h4>Down payment years</h4>
             <p><input type="number"
                       name="years"
@@ -26,7 +26,7 @@
                       data-ng-change="calculate()"> years</p>
             <p class="error">Please type a decimal between 0.05 and 20.</p>
         </div>
-        <div>
+        <div input-validate>
             <h4>Interest rate</h4>
             <p><input type="number"
                       name="interest"
@@ -40,13 +40,15 @@
         </div>
     </form>
 
-    <div data-ng-show="result.payment">
-        <h3>Monthly payment</h3>
-        <p class="result"><span data-ng-bind="result.payment"></span> NOK</p>
-    </div>
+    <div class="result">
+        <div data-ng-show="result.payment">
+            <h3>Monthly payment</h3>
+            <p class="payment"><span data-ng-bind="result.payment"></span> NOK</p>
+        </div>
 
-    <div data-ng-show="result.error">
-        <h3>Error</h3>
-        <p>Could not fetch result. The server responded with: <span data-ng-bind="result.error"></span></p>
+        <div data-ng-show="result.error">
+            <h3>Error</h3>
+            <p>Could not fetch result. The server responded with: <span data-ng-bind="result.error"></span></p>
+        </div>
     </div>
 </div>

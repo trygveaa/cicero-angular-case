@@ -1,6 +1,7 @@
 var loanApp = angular.module("loanApp", [
     "ngRoute",
     "loanControllers",
+    "loanDirectives",
     "loanServices"
 ]);
 

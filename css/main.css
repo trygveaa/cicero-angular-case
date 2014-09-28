@@ -19,17 +19,30 @@
         float: left;
         margin: 20px;
     }
+
+    div.result {
+        clear: both;
+    }
 }
 
 input {
     width: 150px;
 }
 
-.result {
+p.payment {
     font-size: 2em;
     font-weight: bold;
 }
 
-.ng-pristine p.error, .ng-valid p.error {
+p.error {
     display: none;
+}
+
+div.invalid input {
+    border: 1px solid red;
+}
+
+div.invalid p.error {
+    display: inline;
+    color: red;
 }
